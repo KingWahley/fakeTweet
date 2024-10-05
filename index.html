@@ -30,12 +30,12 @@
     <div class="container mx-auto max-w-lg">
       <!-- Toggle for Light/Dark Mode -->
       <div class="flex justify-end mb-4">
-        <button
+        <!-- <button
           id="modeToggle"
           class="bg-gray-300 dark:bg-gray-700 text-black dark:text-white p-2 rounded"
         >
           <i class="fas fa-adjust"></i> Toggle Dark Mode
-        </button>
+        </button> -->
       </div>
 
       <!-- Tweet Form -->
@@ -61,6 +61,16 @@
           placeholder="Enter handle"
           value="@Kiing_Wahley"
         />
+
+        <!-- Verified Checkbox -->
+        <label class="block mb-2">
+          <input id="verified" type="checkbox" class="mr-2" />
+          Show as verified Account
+        </label>
+        <label  id="modeToggle" class="block mb-2">
+          <input id="verified" type="checkbox" class="mr-2" />
+          Use Dark mode
+        </label>
 
         <!-- Tweet Text Input -->
         <textarea
@@ -101,100 +111,122 @@ What regular people see on election morning vs what Portharcourt boys see 😂�
         />
 
         <!-- Likes, Retweets, Comments -->
-        <!-- Likes, Retweets, Comments, Bookmark, Upload -->
         <div class="grid grid-cols-5 gap-2 mb-4">
-          <input
+          <div>
+            <p>
+              Comments
+            </p>
+            <input
             id="comments"
             class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
             type="number"
             placeholder="Comments"
             value="68"
           />
-          <input
+          </div>
+          <div>
+            <p>Retweets</p>
+            <input
             id="retweets"
             class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
             type="number"
             placeholder="Retweets"
             value="45"
           />
-          <input
+          </div>
+          <div>
+            <p>Likes</p>
+             <input
             id="likes"
             class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
             type="number"
             placeholder="Likes"
             value="500"
           />
-          <input
+          </div>
+          <div>
+            <p>Views</p>
+             <input
             id="views"
             class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600"
             type="number"
-            placeholder="Bookmarks"
-            value="0"
+            placeholder="Views"
+            value="85"
           />
+          </div>
+         
+         
+        </div>
+      
+    </div>
+
+    <!-- Preview Tweet -->
+    <div
+      id="tweetPreview"
+      class="bg-white dark:bg-gray-800 dark:text-white shadow-lg rounded-lg p-6"
+    >
+      <div class="flex items-start mb-4">
+        <img
+          id="profilePic"
+          src="https://i.pravatar.cc/48"
+          alt="Profile"
+          class="w-12 h-12 rounded-full mr-4"
+        />
+        <div>
+          <div class="flex justify-between text-gray-500 dark:text-gray-400 w-full">
+            <p id="usernamePreview" class="font-bold">Peter Olawale</p>
+            <!-- Verified Icon -->
+            <span id="verifiedIcon" class="text-blue-500" style="display: none">
+              <img class="w-5" src="./pngwing.com.png" alt="">
+              <!-- <i class="fas fa-check-circle"></i> -->
+            </span>
+          </div>
+
+          <p id="handlePreview" class="text-gray-500 dark:text-gray-400">
+            @Kiing_Wahley · <span id="timeAgoPreview">1h</span>
+          </p>
         </div>
       </div>
 
-      <!-- Preview Tweet -->
+      <p id="tweetTextPreview" class="mb-4">
+        What regular people see on election morning vs what Portharcourt boys
+        see 😂😂
+      </p>
+
+      <!-- Image Preview Grid (for up to 4 images) -->
       <div
-        id="tweetPreview"
-        class="bg-white dark:bg-gray-800 dark:text-white shadow-lg rounded-lg p-6"
+        id="imageContainer"
+        class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4"
       >
-        <div class="flex items-start mb-4">
-          <img
-            id="profilePic"
-            src="https://i.pravatar.cc/48"
-            alt="Profile"
-            class="w-12 h-12 rounded-full mr-4"
-          />
-          <div>
-            <p id="usernamePreview" class="font-bold">Peter Olawale</p>
-            <p id="handlePreview" class="text-gray-500 dark:text-gray-400">
-              @Kiing_Wahley · <span id="timeAgoPreview">1h</span>
-            </p>
-          </div>
-        </div>
+        <!-- Dynamically added images will appear here -->
+      </div>
 
-        <p id="tweetTextPreview" class="mb-4">
-          What regular people see on election morning vs what Portharcourt boys
-          see 😂😂
+      <!-- Tweet Interactions -->
+      <div class="flex justify-between text-gray-500 dark:text-gray-400">
+        <p>
+          <i class="far fa-comment"></i> <span id="commentsPreview">68</span>
         </p>
-
-        <!-- Image Preview Grid (for up to 4 images) -->
-        <div
-          id="imageContainer"
-          class="grid grid-cols-1 md:grid-cols-2 gap-2 mb-4"
-        >
-          <!-- Dynamically added images will appear here -->
-        </div>
-
-        <!-- Tweet Interactions -->
-        <!-- Tweet Interactions -->
+        <p>
+          <i class="fas fa-retweet"></i> <span id="retweetsPreview">45</span>
+        </p>
+        <p><i class="far fa-heart"></i> <span id="likesPreview">500</span></p>
+        <p>
+          <i class="fas fa-chart-bar"></i>
+          <span id="viewspreview">850</span>
+        </p>
         <div class="flex justify-between text-gray-500 dark:text-gray-400">
           <p>
-            <i class="far fa-comment"></i> <span id="commentsPreview">68</span>
+            <i class="far fa-bookmark mr-4"></i>
+            <span id="bookmarkPreview"></span>
           </p>
-          <p>
-            <i class="fas fa-retweet"></i> <span id="retweetsPreview">45</span>
-          </p>
-          <p><i class="far fa-heart"></i> <span id="likesPreview">500</span></p>
-          <p>
-            <i class="fas fa-chart-bar"></i>
-            <span id="viewspreview">850</span>
-          </p>
-          <div class="flex justify-between text-gray-500 dark:text-gray-400">
-            <p>
-              <i class="far fa-bookmark mr-4"></i>
-              <span id="bookmarkPreview"></span>
-            </p>
-            <p>
-              <i class="fas fa-upload"></i> <span id="uploadPreview"></span>
-            </p>
-          </div>
+          <p><i class="fas fa-upload"></i> <span id="uploadPreview"></span></p>
         </div>
       </div>
 
       <!-- Download Button -->
-      <div class="flex justify-center mt-6">
+      
+    </div>
+    <div class="flex justify-center mt-6 mb-10">
         <button
           id="downloadTweet"
           class="bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600"
@@ -202,7 +234,6 @@ What regular people see on election morning vs what Portharcourt boys see 😂�
           <i class="fas fa-download"></i> Download Tweet as Image
         </button>
       </div>
-    </div>
 
     <script>
       // DOM Elements
@@ -227,33 +258,28 @@ What regular people see on election morning vs what Portharcourt boys see 😂�
       const commentsPreview = document.getElementById("commentsPreview");
       const retweetsPreview = document.getElementById("retweetsPreview");
       const likesPreview = document.getElementById("likesPreview");
+      const verifiedIcon = document.getElementById("verifiedIcon");
+      const verifiedCheckbox = document.getElementById("verified");
 
       // Event Listeners to Update Tweet Preview
       usernameInput.addEventListener("input", () => {
         usernamePreview.textContent = usernameInput.value;
       });
-
       handleInput.addEventListener("input", () => {
-        handlePreview.textContent =
-          handleInput.value + " · " + timeAgoInput.value;
+        handlePreview.textContent = `@${handleInput.value}`;
       });
-
       tweetTextInput.addEventListener("input", () => {
         tweetTextPreview.textContent = tweetTextInput.value;
       });
-
       timeAgoInput.addEventListener("input", () => {
         timeAgoPreview.textContent = timeAgoInput.value;
       });
-
       commentsInput.addEventListener("input", () => {
         commentsPreview.textContent = commentsInput.value;
       });
-
       retweetsInput.addEventListener("input", () => {
         retweetsPreview.textContent = retweetsInput.value;
       });
-
       likesInput.addEventListener("input", () => {
         likesPreview.textContent = likesInput.value;
       });
@@ -263,48 +289,51 @@ What regular people see on election morning vs what Portharcourt boys see 😂�
           document.getElementById("views").value;
       });
 
-      // Toggle Light/Dark Mode
-      modeToggle.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
+      // Toggle Verified Icon
+      verifiedCheckbox.addEventListener("change", () => {
+        if (verifiedCheckbox.checked) {
+          verifiedIcon.style.display = "inline";
+        } else {
+          verifiedIcon.style.display = "none";
+        }
       });
 
-      // Image Upload Event Listener for Multiple Images (max 4)
-      imageUploadInput.addEventListener("change", function () {
-        imageContainer.innerHTML = ""; // Clear current images
-        const files = this.files;
-        if (files.length > 4) {
-          alert("You can upload up to 4 images only!");
-          return;
-        }
+      // Profile Picture Upload Preview
+      profilePicUploadInput.addEventListener("change", (event) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          profilePic.src = e.target.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      });
 
-        Array.from(files).forEach((file) => {
+      // Tweet Image Upload Preview
+      imageUploadInput.addEventListener("change", (event) => {
+        imageContainer.innerHTML = ""; // Clear existing images
+        const files = Array.from(event.target.files);
+        files.forEach((file) => {
           const reader = new FileReader();
-          reader.onload = function (event) {
-            const imgElement = document.createElement("img");
-            imgElement.src = event.target.result;
-            imgElement.classList.add("w-full", "h-auto", "rounded");
-            imageContainer.appendChild(imgElement);
+          reader.onload = (e) => {
+            const img = document.createElement("img");
+            img.src = e.target.result;
+            img.className = "w-full rounded-lg";
+            imageContainer.appendChild(img);
           };
           reader.readAsDataURL(file);
         });
       });
 
-      // Profile Picture Upload Event Listener
-      profilePicUploadInput.addEventListener("change", function () {
-        const file = this.files[0];
-        const reader = new FileReader();
-        reader.onload = function (event) {
-          profilePic.src = event.target.result;
-        };
-        reader.readAsDataURL(file);
+      // Toggle Dark Mode
+      modeToggle.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
       });
 
       // Download Tweet as Image
       downloadTweetButton.addEventListener("click", () => {
-        html2canvas(document.getElementById("tweetPreview")).then((canvas) => {
+        html2canvas(document.querySelector("#tweetPreview")).then((canvas) => {
           const link = document.createElement("a");
-          link.href = canvas.toDataURL("image/png");
-          link.download = "tweet-image.png";
+          link.download = "tweet.png";
+          link.href = canvas.toDataURL();
           link.click();
         });
       });
