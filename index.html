@@ -67,10 +67,12 @@
           <input id="verified" type="checkbox" class="mr-2" />
           Show as verified Account
         </label>
-        <label  id="modeToggle" class="block mb-2">
-          <input id="verified" type="checkbox" class="mr-2" />
-          Use Dark mode
-        </label>
+        <!-- Updated Dark Mode Checkbox -->
+<label class="block mb-2">
+  <input id="darkModeCheckbox" type="checkbox" class="mr-2" />
+  Use Dark Mode
+</label>
+
 
         <!-- Tweet Text Input -->
         <textarea
@@ -334,9 +336,17 @@ document.getElementById("views").addEventListener("input", () => {
       });
 
       // Toggle Dark Mode
-      modeToggle.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-      });
+     // Toggle Dark Mode
+const darkModeCheckbox = document.getElementById("darkModeCheckbox");
+
+darkModeCheckbox.addEventListener("change", () => {
+  if (darkModeCheckbox.checked) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+});
+
 
       // Download Tweet as Image
       downloadTweetButton.addEventListener("click", () => {
