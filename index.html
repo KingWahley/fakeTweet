@@ -273,20 +273,31 @@
       timeAgoInput.addEventListener("input", () => {
         timeAgoPreview.textContent = timeAgoInput.value;
       });
-      commentsInput.addEventListener("input", () => {
-        commentsPreview.textContent = commentsInput.value;
-      });
-      retweetsInput.addEventListener("input", () => {
-        retweetsPreview.textContent = retweetsInput.value;
-      });
-      likesInput.addEventListener("input", () => {
-        likesPreview.textContent = likesInput.value;
-      });
+     function formatNumber(value) {
+  if (value >= 1000) {
+    const formattedValue = (value / 1000).toFixed(1);
+    // Remove the decimal part if it's '.0'
+    return formattedValue.endsWith('.0') ? formattedValue.slice(0, -2) + 'k' : formattedValue + 'k';
+  }
+  return value;
+}
 
-      document.getElementById("views").addEventListener("input", () => {
-        document.getElementById("viewspreview").textContent =
-          document.getElementById("views").value;
-      });
+commentsInput.addEventListener("input", () => {
+  commentsPreview.textContent = formatNumber(commentsInput.value);
+});
+
+retweetsInput.addEventListener("input", () => {
+  retweetsPreview.textContent = formatNumber(retweetsInput.value);
+});
+
+likesInput.addEventListener("input", () => {
+  likesPreview.textContent = formatNumber(likesInput.value);
+});
+
+document.getElementById("views").addEventListener("input", () => {
+  document.getElementById("viewspreview").textContent = formatNumber(document.getElementById("views").value);
+});
+
 
       // Toggle Verified Icon
       verifiedCheckbox.addEventListener("change", () => {
