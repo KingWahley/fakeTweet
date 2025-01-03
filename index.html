@@ -37,15 +37,6 @@
     class="bg-gray-100 dark:bg-gray-900 flex justify-center items-center min-h-screen transition-colors duration-500"
   >
     <div class="container mx-auto max-w-lg">
-      <!-- Toggle for Light/Dark Mode -->
-      <div class="flex justify-end mb-4">
-        <!-- <button
-          id="modeToggle"
-          class="bg-gray-300 dark:bg-gray-700 text-black dark:text-white p-2 rounded"
-        >
-          <i class="fas fa-adjust"></i> Toggle Dark Mode
-        </button> -->
-      </div>
 
       <!-- Tweet Form -->
       <div
@@ -59,7 +50,7 @@
           class="w-full p-2 mb-2 border rounded dark:bg-gray-700 dark:border-gray-600"
           type="text"
           placeholder="Enter username"
-          value="Peter Olawale"
+          value=""
         />
 
         <!-- Handle Input -->
@@ -68,7 +59,7 @@
           class="w-full p-2 mb-2 border rounded dark:bg-gray-700 dark:border-gray-600"
           type="text"
           placeholder="Enter handle"
-          value="@Kiing_Wahley"
+          value="@yourhandle"
         />
 
         <!-- Verified Checkbox -->
@@ -77,10 +68,10 @@
           Show as verified Account
         </label>
         <!-- Updated Dark Mode Checkbox -->
-<label class="block mb-2">
-  <input id="darkModeCheckbox" type="checkbox" class="mr-2" />
-  Use Dark Mode
-</label>
+        <label class="block mb-2">
+          <input id="darkModeCheckbox" type="checkbox" class="mr-2" />
+          Use Dark Mode
+        </label>
 
 
         <!-- Tweet Text Input -->
@@ -89,7 +80,7 @@
           class="w-full p-2 mb-2 border rounded dark:bg-gray-700 dark:border-gray-600"
           rows="3"
           placeholder="What's happening?"
-        >Vijan is a really Creative Artist. she's really skillful and here is a link to her youtube channel https://www.youtube.com/@veevidart-w7w</textarea
+        ></textarea
         >
 
         <!-- Upload Profile Picture -->
@@ -112,6 +103,7 @@
         />
 
         <!-- Tweet Time -->
+        <label class="block mb-2">Posted X hours ago</label>
         <input
           id="timeAgo"
           class="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:border-gray-600"
@@ -121,6 +113,7 @@
         />
 
         <!-- Likes, Retweets, Comments -->
+        <label class="block mb-2">Edit the below fields</label>
         <div class="flex flex-row justify-between gap-2">
           <div>
             <p>
@@ -166,7 +159,7 @@
           </div>
          
          
-        </div>
+      </div>
       
     </div>
 
